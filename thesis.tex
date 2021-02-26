@@ -1,0 +1,104 @@
+\documentclass[a4paper, titlepage, 12pt, twoside]{article}
+\usepackage{geometry}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage{afterpage}
+\usepackage{tocloft}
+\usepackage{svg}
+\usepackage[german,english]{babel}
+
+% SET YOUR DATA HERE
+% This is a preliminary title for your thesis.
+\newcommand{\thesisTitle}{My Thesis' Title}
+\newcommand{\germanTitle}{Mein deutscher Titel}
+
+% Your full name.
+\newcommand{\name}{John Doe}
+
+% The time frame in which you want to write the thesis.
+\newcommand{\submissionDate}{01.01.2020}
+
+% The time frame in which you want to write the thesis.
+\newcommand{\matriculationNumber}{123456}
+
+% The primary supervisor. You probably do not need to change this.
+\newcommand{\supervisor}{Prof. Dr. Tilmann Rabl}
+
+% The name(s) of your advisor(s). This is probably the PhD student or PostDoc that you are working with.
+\newcommand{\advisor}{Name of Advisor\\Second Advisor (if there is one)}
+
+% Select if this is a Bachelor or Master Thesis.
+\newcommand{\thesisType}{Bachelor/Master}
+
+
+\newcommand\todo[1]{\colorbox{yellow}{#1}}
+\setlength{\bibsep}{3pt}
+
+\raggedbottom
+
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyhead[LE,RO]{\leftmark}
+\fancyhead[LE,RO]{\rightmark}
+% \fancyfoot[CE,CO]{\rightmark}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\setlength{\headheight}{15pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\usepackage{etoc}
+\renewcommand{\etocaftertitlehook}{\pagestyle{plain}}
+\renewcommand{\etocaftertochook}{\thispagestyle{plain}}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{1}%
+    \newpage}
+
+
+\begin{document}
+
+\newgeometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+\input{content/template/title-page}
+\restoregeometry
+\pagenumbering{roman}
+\afterpage{\blankpage}
+\include{content/template/abstract}
+\afterpage{\blankpage}
+\include{content/template/zusammenfassung}
+
+\setcounter{page}{6}
+\renewcommand{\baselinestretch}{1.5}\normalsize
+\tableofcontents
+\renewcommand{\baselinestretch}{1.0}\normalsize
+
+\afterpage{\blankpage}
+
+% ADD YOUR SECTIONS HERE
+\include{content/introduction}
+\include{content/background}
+% ...
+
+
+\bibliographystyle{plain}
+{\small 
+\bibliography{references}
+}
+
+\afterpage{\blankpage}
+\include{content/template/declaration}
+
+\end{document}
