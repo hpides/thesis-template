@@ -8,6 +8,8 @@ The template consists of the main `thesis.tex` file, a folder for the individual
 
 In the `thesis.tex` file, you can set a few variables at the beginning of the file that then fill your cover page.
 
+The template is also available as a [template in Overleaf](https://www.overleaf.com/latex/templates/hpides-thesis-template/kjqgzvcsdtsy). 
+You can open it there and start working directly without installing Latex on your machine.
 You can always find the newest version of this template in our [GitHub repository](https://github.com/hpides/thesis-template).
 
 
